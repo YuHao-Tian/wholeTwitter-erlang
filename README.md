@@ -2,11 +2,9 @@
 # 1. Group members  
 Xin Li, Yuhao Tian  
 # 2. Project definition  
-Use WebSharper web framework to implement a WebSocket interface to twitter project.  
+This project only simulates the socket workflow, simplifies the link process, does not deal with the tcp handshake, and does not verify the html protocol version, the client and the database information transfer does not use the format of http message header (so it does not distinguish get post request), the client front-end does not write web-related programs, can not yet support web display. When the client establishes a connection with the server, binary data is passed, and the data type is json format. After the sender generates the information, it is transformed into json format by the xxx method, and the receiver accepts it and then transforms it into an erlang recognizable data type internally. The json format type is as follows {"cmd": "cmd_instruction", "Username": "user",....}  
 # 3. Project requirements  
-1) Constructing a JSON-based API to represent all messages and their responses (including errors).
-2) Use WebSharper to rewrite parts of engine so that the WebSocket interface is implemented.
-3) Parts of our client from part 1 need to be rewritten to use WebSockets.  
+This project takes into account a variety of business logic, including but not limited to the server listening process and the linking process in each stage of the exception capture, user operations to ensure the normal operation of the server under a variety of behaviors (for example, not logged in state to send tweets and subscriptions invalid, login account password verification, can not log out twice, etc.)    
 # 4. How to operate  
 ## 1) Prerequisite  
 First of all, we need to open database.erl file, then run code *database:init_database()* as command line.  
