@@ -8,4 +8,6 @@ Use WebSharper web framework to implement a WebSocket interface to twitter proje
 2) Use WebSharper to rewrite parts of engine so that the WebSocket interface is implemented.
 3) Parts of our client from part 1 need to be rewritten to use WebSockets.  
 # 4. How to operate  
-
+首先初始化database, init_database  
+然后先打开server端，start()  
+其次使用client端，先start()，然后调用catalog()。每次做完一个选项需要重新调用catalog()进行下一步的选择。  
